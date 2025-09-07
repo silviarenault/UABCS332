@@ -4,11 +4,11 @@ int CreateArray(int N) {
     int arr[N];
     int i=0;
     while (i<N){
+        int elmnt;
         printf("Please enter element %d of array: ", i+1);
-        arr[i]=scanf("%d");
-    }
-    while (i<N){
-        printf("%d", arr[i]);
+        scanf("%d", &elmnt);
+        arr[i]=elmnt;
+        i++;
     }
     return 0;
 }
