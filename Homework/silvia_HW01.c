@@ -5,12 +5,13 @@
 #include <ctype.h>
 
 int sumOfDigits(int n){
-   if(n<1){
-    printf("n=%d: -1\n",n);
-   }
-   else{
-    char s[100];
     int ttl=0;
+    if(n<1){
+        printf("n=%d: -1\n",n);
+        return -1;
+    }
+    else{
+    char s[100];
     sprintf(s, "%d", n);
     int len=strlen(s);
     for(int i=0;i<len;i++){
@@ -20,7 +21,7 @@ int sumOfDigits(int n){
     }
     printf("n=%d: %d\n",n,ttl);
     }
-    return 0;
+    return ttl;
 }
 
 int UABMaxMinDiff(int *arr, int len){
