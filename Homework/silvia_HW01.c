@@ -40,7 +40,6 @@ int UABMaxMinDiff(int *arr, int len){
 
 int replaceEvenWithZero(int *arr, int len){
     int replace[len];
-    printf("arr[%d", arr[0]);
     for(int j=0;j<len;j++){
         if(arr[j]%2!=0){
             replace[j]=arr[j];
@@ -55,16 +54,13 @@ int replaceEvenWithZero(int *arr, int len){
 bool perfectSquare(int n){
     for(int i=n-1;i>0;i--){
         if(i==abs(n/i)){
-            printf("%d: True\n",n);
             return true;
             }
     }
-    printf("%d: False\n",n);
     return false;
 }
 
 int countVowels(char *s){
-    printf("s=%s: ",s);
     int slen=strlen(s);
     char vowels[]="aeiou";
     int vlen=strlen(vowels);
@@ -81,12 +77,11 @@ int countVowels(char *s){
             }
         }
     }
-    printf("%d\n",ttl);
-    return 0;
+    return ttl;
 }
 
 int main(){
-/*
+
     printf("-Sum of Digits-\n");
     printf("n=123: %d\n",sumOfDigits(123));
     printf("n=405: %d\n",sumOfDigits(405));
@@ -104,13 +99,11 @@ int main(){
     int mm3[]={-2,4,-1,6,5};
     len=sizeof(mm3)/sizeof(mm3[0]);
     printf("arr= [-2,4,-1,6,5]: %d",UABMaxMinDiff(mm3,len));
-*/
+
     printf("-Replace Even with Zero-\n");
     int rz1[]={1,2,3,4};
-    int len=sizeof(rz1)/sizeof(rz1[0]);
-    int replaced[]={replaceEvenWithZero(rz1,len)};
-    printf("%d %d\n",replaced[0],replaced[1]);
-   /* int rz2[]={2,4,6};
+    len=sizeof(rz1)/sizeof(rz1[0]);
+    int rz2[]={2,4,6};
     len=sizeof(rz2)/sizeof(rz2[0]);
     replaceEvenWithZero(rz2,len);
     int rz3[]={1,3,5};
@@ -118,13 +111,26 @@ int main(){
     replaceEvenWithZero(rz3,len);
 
     printf("-Perfect Square\n");
-    perfectSquare(16);
-    perfectSquare(15);
-    perfectSquare(25);
-    perfectSquare(36);
+    if(perfectSquare(16))
+        printf("n=16: True\n");
+    else
+        printf("n=16: False\n");
+    if(perfectSquare(15))
+        printf("n=15: True\n");
+    else   
+        printf("n=15: False\n");
+    if(perfectSquare(25))
+        printf("n=25: True\n");
+    else   
+        printf("n=25: False\n");
+    if(perfectSquare(36))
+        printf("n=36: True\n");
+    else   
+        printf("n=36: False\n");
+
     printf("-Count Vowels-\n");
-    countVowels("Hello World");
-    countVowels("UAB CS");
-    countVowels("Python");
-    countVowels("aeiou");*/
+    printf("s=Hello World: %d\n",countVowels("Hello World"));
+    printf("s=UAB CS: %d\n",countVowels("UAB CS"));
+    printf("s=Python: %d\n",countVowels("Python"));
+    printf("s=aeiou: %d\n",countVowels("aeiou"));
 }
