@@ -7,7 +7,6 @@
 int sumOfDigits(int n){
     int ttl=0;
     if(n<1){
-        printf("n=%d: -1\n",n);
         return -1;
     }
     else{
@@ -19,22 +18,14 @@ int sumOfDigits(int n){
         int num=c-'0';
         ttl+=num;
     }
-    printf("n=%d: %d\n",n,ttl);
+   return ttl;
     }
-    return ttl;
 }
 
 int UABMaxMinDiff(int *arr, int len){
     int diff;
     int max=arr[0];
     int min=arr[0];
-    printf("arr[%d", arr[0]);
-        int i=1;
-        while (i<len){
-            printf(", %d", arr[i]);
-            i++;
-        }
-    printf("]: ");
     for(int j=0;j<len;j++){
         if(arr[j]>max){
             max=arr[j];
@@ -44,19 +35,12 @@ int UABMaxMinDiff(int *arr, int len){
         }
     }
     diff=max-min;
-    printf("%d\n",diff);
-    return 0;
+    return diff;
 }
 
 int replaceEvenWithZero(int *arr, int len){
     int replace[len];
     printf("arr[%d", arr[0]);
-    int i=1;
-    while (i<len){
-        printf(", %d", arr[i]);
-        i++;
-    }
-    printf("]: ");
     for(int j=0;j<len;j++){
         if(arr[j]%2!=0){
             replace[j]=arr[j];
@@ -65,14 +49,7 @@ int replaceEvenWithZero(int *arr, int len){
             replace[j]=0;
         }
     }
-    printf("[%d", replace[0]);
-    int k=1;
-    while (k<len){
-        printf(", %d", replace[k]);
-        k++;
-    }
-    printf("]\n");
-    return 0;
+    return *replace;
 }
     
 bool perfectSquare(int n){
@@ -109,32 +86,37 @@ int countVowels(char *s){
 }
 
 int main(){
+/*
     printf("-Sum of Digits-\n");
-    sumOfDigits(123);
-    sumOfDigits(405);
-    sumOfDigits(0);
-    sumOfDigits(7);
-    sumOfDigits(-308);
+    printf("n=123: %d\n",sumOfDigits(123));
+    printf("n=405: %d\n",sumOfDigits(405));
+    printf("n=0: %d\n",sumOfDigits(0));
+    printf("n=7: %d\n",sumOfDigits(7));
+    printf("n=-308: %d\n",sumOfDigits(-308));    
+
     printf("-Max and Min Diff-\n");
     int mm1[]={3,7,2,9};
     int len=sizeof(mm1)/sizeof(mm1[0]);
-    UABMaxMinDiff(mm1,len);
+    printf("arr= [3,7,2,9]: %d",UABMaxMinDiff(mm1,len));
     int mm2[]={5,5,5,5,5,5};
     len=sizeof(mm2)/sizeof(mm2[0]);
-    UABMaxMinDiff(mm2,len);
+    printf("arr= [5,5,5,5,5,5]: %d",UABMaxMinDiff(mm2,len));
     int mm3[]={-2,4,-1,6,5};
     len=sizeof(mm3)/sizeof(mm3[0]);
-    UABMaxMinDiff(mm3,len);
+    printf("arr= [-2,4,-1,6,5]: %d",UABMaxMinDiff(mm3,len));
+*/
     printf("-Replace Even with Zero-\n");
     int rz1[]={1,2,3,4};
-    len=sizeof(rz1)/sizeof(rz1[0]);
-    replaceEvenWithZero(rz1,len);
-    int rz2[]={2,4,6};
+    int len=sizeof(rz1)/sizeof(rz1[0]);
+    int replaced[]={replaceEvenWithZero(rz1,len)};
+    printf("%d %d\n",replaced[0],replaced[1]);
+   /* int rz2[]={2,4,6};
     len=sizeof(rz2)/sizeof(rz2[0]);
     replaceEvenWithZero(rz2,len);
     int rz3[]={1,3,5};
     len=sizeof(rz3)/sizeof(rz3[0]);
     replaceEvenWithZero(rz3,len);
+
     printf("-Perfect Square\n");
     perfectSquare(16);
     perfectSquare(15);
@@ -144,5 +126,5 @@ int main(){
     countVowels("Hello World");
     countVowels("UAB CS");
     countVowels("Python");
-    countVowels("aeiou");
+    countVowels("aeiou");*/
 }
